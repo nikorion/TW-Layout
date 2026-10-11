@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 
 Remplace la mise en page par défaut par une où la rivière de récits, les onglets de la barre latérale et le contenu des onglets défilent chacun dans leur propre zone indépendante — au lieu que toute la page défile comme un seul bloc.
 
-Sélectionne-la depuis le sélecteur de mise en page (<<icon $:/core/images/layout-button>> à côté de la barre latérale) — c'est une entrée ''$:/tags/Layout'' alternative, qui cohabite donc avec la mise en page par défaut plutôt que de la remplacer d'office.
+Sélectionnez-la depuis le sélecteur de mise en page (<<icon $:/core/images/layout-button>> à côté de la barre latérale) — c'est une entrée ''$:/tags/Layout'' alternative, qui cohabite donc avec la mise en page par défaut plutôt que de la remplacer d'office.
 
 ! Ce que le plugin change
 
