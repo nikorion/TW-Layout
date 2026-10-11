@@ -1,0 +1,77 @@
+title: $:/plugins/nikorion/scroll-layout/settings
+tags: $:/tags/ControlPanel/SettingsTab
+caption: <<scroll-layout-lingo Settings/Caption>>
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+<h2><<scroll-layout-lingo Settings/Heading>></h2>
+
+<p><<scroll-layout-lingo Settings/Intro>></p>
+
+---
+
+<h3><<scroll-layout-lingo Settings/Section/ScrollbarAppearance>></h3>
+
+<p><em><<scroll-layout-lingo Settings/Note/GeckoOnly>></em></p>
+
+<p><em><<scroll-layout-lingo Settings/Note/StoryWidth>></em></p>
+
+<p><em><<scroll-layout-lingo Settings/Note/FixedFluid>></em></p>
+
+<table class="tc-pref-table tc-table-no-border">
+<tbody>
+<tr>
+<td><<scroll-layout-lingo Settings/Label/WidthMode>></td>
+<td><$select tiddler="$:/config/nikorion/scroll-layout/scrollbar-width-mode" field="text" default="thin">
+<option value="thin">Thin</option>
+<option value="auto">Auto</option>
+<option value="none">None</option>
+</$select></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>thin</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-width-mode]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-width-mode"/>↺</$button></$list></td>
+</tr>
+
+<tr>
+<td><<scroll-layout-lingo Settings/Label/Width>></td>
+<td><$edit-text tiddler="$:/config/nikorion/scroll-layout/scrollbar-width" field="text" default="10px" tag="input" size="8"/></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>10px</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-width]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-width"/>↺</$button></$list></td>
+</tr>
+
+<tr>
+<td><<scroll-layout-lingo Settings/Label/Radius>></td>
+<td><$edit-text tiddler="$:/config/nikorion/scroll-layout/scrollbar-radius" field="text" default="8px" tag="input" size="8"/></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>8px</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-radius]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-radius"/>↺</$button></$list></td>
+</tr>
+
+<tr>
+<td><<scroll-layout-lingo Settings/Label/ThumbColor>></td>
+<td><$edit-text tiddler="$:/config/nikorion/scroll-layout/scrollbar-thumb-color" field="text" type="color" default="#5778d8" tag="input"/></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>var(--tpc-primary)</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-thumb-color]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-thumb-color"/>↺</$button></$list></td>
+</tr>
+
+<tr>
+<td><<scroll-layout-lingo Settings/Label/ThumbHoverColor>></td>
+<td><$edit-text tiddler="$:/config/nikorion/scroll-layout/scrollbar-thumb-hover-color" field="text" type="color" default="#5778d8" tag="input"/></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>var(--tpc-primary)</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-thumb-hover-color]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-thumb-hover-color"/>↺</$button></$list></td>
+</tr>
+
+<tr>
+<td><<scroll-layout-lingo Settings/Label/TrackColor>></td>
+<td><$edit-text tiddler="$:/config/nikorion/scroll-layout/scrollbar-track-color" field="text" default="transparent" tag="input" size="20"/></td>
+<td><em><<scroll-layout-lingo-text Settings/DefaultLabel>>&nbsp;<code>transparent</code></em></td>
+<td><$list filter="[[$:/config/nikorion/scroll-layout/scrollbar-track-color]is[tiddler]]"><$button tooltip=<<scroll-layout-lingo-text Settings/ResetTooltip>>>
+<$action-deletetiddler $tiddler="$:/config/nikorion/scroll-layout/scrollbar-track-color"/>↺</$button></$list></td>
+</tr>
+</tbody>
+</table>
+

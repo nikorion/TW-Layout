@@ -1,4 +1,4 @@
-title: $:/plugins/nikorion/layout/language/fr-FR/readme
+title: $:/plugins/nikorion/scroll-layout/language/fr-FR/readme
 type: text/vnd.tiddlywiki
 
 \whitespace trim
@@ -10,11 +10,11 @@ Sélectionnez-la depuis le sélecteur de mise en page (<<icon $:/core/images/lay
 ! Ce que le plugin change
 
 <<<
-''Mise en page ([[layout.tid|$:/plugins/nikorion/layout/layout]])'' — la rivière de récits, normalement une simple &nbsp;`<section>`&nbsp; qui défile avec le reste de la page, est enrobée dans un widget &nbsp;`$scrollable`&nbsp; (`fallthrough="no"`). Elle devient ainsi son propre conteneur de défilement avec sa propre barre, dimensionné à &nbsp;`calc(100vh - storytop)`.
+''Mise en page ([[layout.tid|$:/plugins/nikorion/scroll-layout/layout]])'' — la rivière de récits, normalement une simple &nbsp;`<section>`&nbsp; qui défile avec le reste de la page, est enrobée dans un widget &nbsp;`$scrollable`&nbsp; (`fallthrough="no"`). Elle devient ainsi son propre conteneur de défilement avec sa propre barre, dimensionné à &nbsp;`calc(100vh - storytop)`.
 
-''Barre latérale ([[base.css|$:/plugins/nikorion/layout/styles/base.css]])'' — la chaîne flex de la barre latérale (de &nbsp;`.tc-sidebar-scrollable`&nbsp; jusqu'à &nbsp;`.tc-tab-content`) est mise en &nbsp;`display:flex; flex-direction:column; min-height:0`&nbsp; à chaque niveau, pour que la hauteur se propage jusqu'en bas et que seul le panneau de contenu de l'onglet défile — la barre d'onglets elle-même reste fixe.
+''Barre latérale ([[base.css|$:/plugins/nikorion/scroll-layout/styles/base.css]])'' — la chaîne flex de la barre latérale (de &nbsp;`.tc-sidebar-scrollable`&nbsp; jusqu'à &nbsp;`.tc-tab-content`) est mise en &nbsp;`display:flex; flex-direction:column; min-height:0`&nbsp; à chaque niveau, pour que la hauteur se propage jusqu'en bas et que seul le panneau de contenu de l'onglet défile — la barre d'onglets elle-même reste fixe.
 
-''Navigation ([[startup.js|$:/plugins/nikorion/layout/startup.js]])'' — cliquer sur un lien vers un tiddler doit faire défiler la rivière jusqu'à ce tiddler, mais deux mécanismes du cœur de TiddlyWiki supposent que c'est la *fenêtre* qui défile, ce qui n'est plus vrai une fois que la rivière défile seule :
+''Navigation ([[startup.js|$:/plugins/nikorion/scroll-layout/startup.js]])'' — cliquer sur un lien vers un tiddler doit faire défiler la rivière jusqu'à ce tiddler, mais deux mécanismes du cœur de TiddlyWiki supposent que c'est la *fenêtre* qui défile, ce qui n'est plus vrai une fois que la rivière défile seule :
 
 * `$tw.pageScroller.scrollIntoView`&nbsp; (utilisé pour les événements &nbsp;`tm-scroll`&nbsp; qui atteignent directement &nbsp;`$tw.rootWidget`)
 * `ScrollableWidget.prototype.scrollIntoView`&nbsp; (celui réellement invoqué pour un clic sur un lien ordinaire, puisque le widget scrollable absorbe son propre événement &nbsp;`tm-scroll`&nbsp; et ne le laisse jamais remonter)
@@ -26,7 +26,7 @@ Les deux sont patchés, mais uniquement pour l'instance de la rivière de récit
 
 ! Réglages
 
-La largeur et les couleurs de la barre de défilement se configurent depuis l'onglet &nbsp;''Layout''&nbsp; du panneau de configuration ([[settings.tid|$:/plugins/nikorion/layout/settings]]). La mise en page de la barre latérale elle-même (largeurs et espacements story/sidebar) reste sous le contrôle du thème standard (Theme Tweaks) : le plugin ne fait que repositionner la barre de défilement de la rivière, collée au contenu, pour que la largeur du contenu ne dépende jamais du mode de largeur de la barre.
+La largeur et les couleurs de la barre de défilement se configurent depuis l'onglet &nbsp;''Layout''&nbsp; du panneau de configuration ([[settings.tid|$:/plugins/nikorion/scroll-layout/settings]]). La mise en page de la barre latérale elle-même (largeurs et espacements story/sidebar) reste sous le contrôle du thème standard (Theme Tweaks) : le plugin ne fait que repositionner la barre de défilement de la rivière, collée au contenu, pour que la largeur du contenu ne dépende jamais du mode de largeur de la barre.
 
 Note pour la disposition ''fixed-fluid'' : la barre de défilement suit la métrique ''story width'' (Theme Tweaks) — ''tiddler width'' et ''story width'' sont des métriques indépendantes dans le thème standard ; ajustez donc ''tiddler width'' pour qu'il tienne dans ''story width'' (au plus story width − 84px, les deux gouttières de 42px du thème). Si ''tiddler width'' dépasse, la rivière s'élargit pour l'accueillir et la barre suit alors ''tiddler width'' — rien n'est tronqué, mais la colonne de story ne correspond plus à ''story width''.
 

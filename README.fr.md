@@ -1,4 +1,4 @@
-# TW-Layout
+# TW-Scroll-Layout
 
 [English](README.md) · **Français**
 
@@ -17,7 +17,7 @@ Par défaut, TiddlyWiki fait défiler toute la fenêtre du navigateur. Ce plugin
 
 Tout le reste (barre supérieure, en-tête de la barre latérale, cadre de la mise en page) reste fixe à l'écran.
 
-Le plugin ne s'active que lorsque sa mise en page est sélectionnée (`$:/layout` = `$:/plugins/nikorion/layout/layout`). Toutes les autres mises en page retrouvent exactement le comportement du core — aucun effet de bord quand la mise en page est inactive.
+Le plugin ne s'active que lorsque sa mise en page est sélectionnée (`$:/layout` = `$:/plugins/nikorion/scroll-layout/layout`). Toutes les autres mises en page retrouvent exactement le comportement du core — aucun effet de bord quand la mise en page est inactive.
 
 ## Fonctionnalités
 
@@ -50,40 +50,40 @@ Le module de démarrage corrige `$tw.pageScroller.scrollIntoView` : quand l'él�
 
 ## Installation
 
-**Démo en ligne** : [https://nikorion.github.io/TW-Layout/](https://nikorion.github.io/TW-Layout/) — pour essayer le plugin avant de l'installer.
+**Démo en ligne** : [https://nikorion.github.io/TW-Scroll-Layout/](https://nikorion.github.io/TW-Scroll-Layout/) — pour essayer le plugin avant de l'installer.
 
 **Depuis la bibliothèque de plugins nikorion** (TiddlyWiki propose ensuite chaque nouvelle version en mise à jour) :
 
 1. Sur [nikorion.github.io/TW-Plugin-Library](https://nikorion.github.io/TW-Plugin-Library/), glisser le bouton **Bibliothèque de plugins nikorion** sur votre wiki (une fois par wiki).
-2. Ouvrir *Panneau de configuration → Plugins → Obtenir d'autres plugins → Ouvrir la bibliothèque de plugins*, choisir l'onglet nikorion et installer **Layout**.
+2. Ouvrir *Panneau de configuration → Plugins → Obtenir d'autres plugins → Ouvrir la bibliothèque de plugins*, choisir l'onglet nikorion et installer **Scroll Layout**.
 
-**À la main** : télécharger [`TW-Layout-Plugin.json`](https://nikorion.github.io/TW-Layout/TW-Layout-Plugin.json) et le glisser-déposer sur votre wiki.
+**À la main** : télécharger [`TW-Scroll-Layout-Plugin.json`](https://nikorion.github.io/TW-Scroll-Layout/TW-Scroll-Layout-Plugin.json) et le glisser-déposer sur votre wiki.
 
 Nécessite TiddlyWiki ≥ 5.3.0.
 
-Ensuite, ouvrir le sélecteur de mise en page (icône d'engrenage → Layout) et choisir **Layout**.
+Ensuite, ouvrir le sélecteur de mise en page (icône d'engrenage → Layout) et choisir **Mise en page nikorion**.
 
 ## Développement
 
-Cloner [tw-dev](https://github.com/nikorion/tw-dev) à côté de ce dépôt : `pnpm dev` l'exécute, et il relie lui-même les plugins nikorion que charge le wiki de dev — depuis les clones placés à côté de celui-ci (`../TW-Math`…), pour que vos modifications y soient prises en direct, sinon depuis une copie en lecture seule qu'il récupère sur GitHub. Ni lien symbolique, ni `TIDDLYWIKI_PLUGIN_PATH`, ni droits administrateur. Seul `pnpm build` a encore besoin de `TIDDLYWIKI_PLUGIN_PATH` : le faire pointer sur `../tw-dev/.state/TW-Layout/plugins`, créé par `pnpm dev`.
+Cloner [tw-dev](https://github.com/nikorion/tw-dev) à côté de ce dépôt : `pnpm dev` l'exécute, et il relie lui-même les plugins nikorion que charge le wiki de dev — depuis les clones placés à côté de celui-ci (`../TW-Math`…), pour que vos modifications y soient prises en direct, sinon depuis une copie en lecture seule qu'il récupère sur GitHub. Ni lien symbolique, ni `TIDDLYWIKI_PLUGIN_PATH`, ni droits administrateur. Seul `pnpm build` a encore besoin de `TIDDLYWIKI_PLUGIN_PATH` : le faire pointer sur `../tw-dev/.state/TW-Scroll-Layout/plugins`, créé par `pnpm dev`.
 
 ```
 pnpm install
 pnpm dev      # wiki de dev + rechargement à chaud ; l'URL (port libre aléatoire) s'affiche au démarrage
-pnpm build    # dist/TW-Layout-Plugin.json + docs/ (wiki de démo, publié par la CI)
+pnpm build    # dist/TW-Scroll-Layout-Plugin.json + docs/ (wiki de démo, publié par la CI)
 ```
 
-Les sources sont dans `src/layout/`. Le wiki de dev est dans `wiki/`. `pnpm dev` lance le serveur de dev partagé `../tw-dev` (cloné à côté de ce dépôt), qui associe nodemon (ne redémarre TW que sur modification d'un module JS ou de `plugin.info`) à un serveur de rechargement à chaud du contenu par SSE : les tiddlers de contenu (`.tid`, `.multids`, `.css`…) sont remplacés à chaud dans le navigateur, état conservé, tandis qu'une modification de module déclenche un redémarrage puis un rechargement complet une fois TW revenu.
+Les sources sont dans `src/scroll-layout/`. Le wiki de dev est dans `wiki/`. `pnpm dev` lance le serveur de dev partagé `../tw-dev` (cloné à côté de ce dépôt), qui associe nodemon (ne redémarre TW que sur modification d'un module JS ou de `plugin.info`) à un serveur de rechargement à chaud du contenu par SSE : les tiddlers de contenu (`.tid`, `.multids`, `.css`…) sont remplacés à chaud dans le navigateur, état conservé, tandis qu'une modification de module déclenche un redémarrage puis un rechargement complet une fois TW revenu.
 
 ## Fichiers
 
 | Fichier | Rôle |
 |---|---|
-| `src/layout/plugin.info` | Métadonnées du plugin |
-| `src/layout/layout.tid` | Point d'entrée de la mise en page (tag `$:/tags/Layout`) — transclut le modèle de page du core |
-| `src/layout/story.tid` | Surcharge du shadow `$:/core/ui/PageTemplate/story` — enveloppe le story river dans un `$scrollable` |
-| `src/layout/stylesheet.tid` | Tout le CSS — conditionné à l'activation de la mise en page |
-| `src/layout/modules/startup.js` | Correctif de `$tw.pageScroller` + écouteur de défilement pour `tc-tiddler-stuck` |
+| `src/scroll-layout/plugin.info` | Métadonnées du plugin |
+| `src/scroll-layout/layout.tid` | Point d'entrée de la mise en page (tag `$:/tags/Layout`) — transclut le modèle de page du core |
+| `src/scroll-layout/story.tid` | Surcharge du shadow `$:/core/ui/PageTemplate/story` — enveloppe le story river dans un `$scrollable` |
+| `src/scroll-layout/stylesheet.tid` | Tout le CSS — conditionné à l'activation de la mise en page |
+| `src/scroll-layout/modules/startup.js` | Correctif de `$tw.pageScroller` + écouteur de défilement pour `tc-tiddler-stuck` |
 
 ## Compatibilité
 

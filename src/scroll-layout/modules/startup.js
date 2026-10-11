@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/nikorion/layout/startup.js
+title: $:/plugins/nikorion/scroll-layout/startup.js
 type: application/javascript
 module-type: startup
 \*/

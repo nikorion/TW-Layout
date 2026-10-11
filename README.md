@@ -1,4 +1,4 @@
-# TW-Layout
+# TW-Scroll-Layout
 
 **English** · [Français](README.fr.md)
 
@@ -17,7 +17,7 @@ By default, TiddlyWiki scrolls the entire browser window. This plugin replaces t
 
 Everything else (topbar, sidebar header, layout chrome) remains fixed on screen.
 
-The plugin activates only when its layout is selected (`$:/layout` = `$:/plugins/nikorion/layout/layout`). All other layouts fall back to exact core behaviour — no side effects when the layout is inactive.
+The plugin activates only when its layout is selected (`$:/layout` = `$:/plugins/nikorion/scroll-layout/layout`). All other layouts fall back to exact core behaviour — no side effects when the layout is inactive.
 
 ## Features
 
@@ -50,40 +50,40 @@ The startup module patches `$tw.pageScroller.scrollIntoView`: when the target el
 
 ## Installation
 
-**Live demo**: [https://nikorion.github.io/TW-Layout/](https://nikorion.github.io/TW-Layout/) — try the plugin before installing it.
+**Live demo**: [https://nikorion.github.io/TW-Scroll-Layout/](https://nikorion.github.io/TW-Scroll-Layout/) — try the plugin before installing it.
 
 **From the nikorion plugin library** (TiddlyWiki then offers each new version as an update):
 
 1. On [nikorion.github.io/TW-Plugin-Library](https://nikorion.github.io/TW-Plugin-Library/), drag the **nikorion plugin library** button onto your wiki (once per wiki).
-2. Open *Control Panel → Plugins → Get more plugins → Open plugin library*, choose the nikorion tab and install **Layout**.
+2. Open *Control Panel → Plugins → Get more plugins → Open plugin library*, choose the nikorion tab and install **Scroll Layout**.
 
-**By hand**: download [`TW-Layout-Plugin.json`](https://nikorion.github.io/TW-Layout/TW-Layout-Plugin.json) and drag it onto your wiki.
+**By hand**: download [`TW-Scroll-Layout-Plugin.json`](https://nikorion.github.io/TW-Scroll-Layout/TW-Scroll-Layout-Plugin.json) and drag it onto your wiki.
 
 Requires TiddlyWiki ≥ 5.3.0.
 
-Then open the layout picker (gear icon → Layout) and select **Layout**.
+Then open the layout picker (gear icon → Layout) and select **Nikorion layout**.
 
 ## Development
 
-Clone [tw-dev](https://github.com/nikorion/tw-dev) next to this repository: `pnpm dev` runs it, and it links by itself the nikorion plugins the dev wiki loads — from clones sitting next to this one (`../TW-Math`…), so your edits to them are live, otherwise from a read-only copy it fetches from GitHub. No symlink, no `TIDDLYWIKI_PLUGIN_PATH`, no admin rights. `pnpm build` alone still needs `TIDDLYWIKI_PLUGIN_PATH`: point it to `../tw-dev/.state/TW-Layout/plugins`, created by `pnpm dev`.
+Clone [tw-dev](https://github.com/nikorion/tw-dev) next to this repository: `pnpm dev` runs it, and it links by itself the nikorion plugins the dev wiki loads — from clones sitting next to this one (`../TW-Math`…), so your edits to them are live, otherwise from a read-only copy it fetches from GitHub. No symlink, no `TIDDLYWIKI_PLUGIN_PATH`, no admin rights. `pnpm build` alone still needs `TIDDLYWIKI_PLUGIN_PATH`: point it to `../tw-dev/.state/TW-Scroll-Layout/plugins`, created by `pnpm dev`.
 
 ```
 pnpm install
 pnpm dev      # dev wiki + hot reload; the URL (random free port) is printed on start
-pnpm build    # dist/TW-Layout-Plugin.json + docs/ (demo wiki, published by CI)
+pnpm build    # dist/TW-Scroll-Layout-Plugin.json + docs/ (demo wiki, published by CI)
 ```
 
-Sources are in `src/layout/`. The dev wiki is in `wiki/`. `pnpm dev` runs the shared dev server `../tw-dev` (cloned next to this repository), which pairs nodemon (reboots TW only on JS module / `plugin.info` changes) with an SSE content-HMR server: content tiddlers (`.tid`, `.multids`, `.css`…) are hot-swapped in the browser with state preserved, while module changes trigger a reboot then a full reload once TW is back up.
+Sources are in `src/scroll-layout/`. The dev wiki is in `wiki/`. `pnpm dev` runs the shared dev server `../tw-dev` (cloned next to this repository), which pairs nodemon (reboots TW only on JS module / `plugin.info` changes) with an SSE content-HMR server: content tiddlers (`.tid`, `.multids`, `.css`…) are hot-swapped in the browser with state preserved, while module changes trigger a reboot then a full reload once TW is back up.
 
 ## Files
 
 | File | Role |
 |---|---|
-| `src/layout/plugin.info` | Plugin metadata |
-| `src/layout/layout.tid` | Layout entry point (tag `$:/tags/Layout`) — transclude core page template |
-| `src/layout/story.tid` | Shadow override of `$:/core/ui/PageTemplate/story` — wraps story river in `$scrollable` |
-| `src/layout/stylesheet.tid` | All CSS — gated on the layout being active |
-| `src/layout/modules/startup.js` | `$tw.pageScroller` patch + `tc-tiddler-stuck` scroll listener |
+| `src/scroll-layout/plugin.info` | Plugin metadata |
+| `src/scroll-layout/layout.tid` | Layout entry point (tag `$:/tags/Layout`) — transclude core page template |
+| `src/scroll-layout/story.tid` | Shadow override of `$:/core/ui/PageTemplate/story` — wraps story river in `$scrollable` |
+| `src/scroll-layout/stylesheet.tid` | All CSS — gated on the layout being active |
+| `src/scroll-layout/modules/startup.js` | `$tw.pageScroller` patch + `tc-tiddler-stuck` scroll listener |
 
 ## Compatibility
 

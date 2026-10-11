@@ -1,9 +1,8 @@
 created: 20260619003004662
 creator: nikorion
-modified: 20260619003004662
+modified: 20261011175045000
 modifier: nikorion
 title: $:/DefaultTiddlers
 type: text/vnd.tiddlywiki
 
-$:/plugins/nikorion/layout
-$:/plugins/nikorion/layout/settings
+$:/plugins/nikorion/scroll-layout

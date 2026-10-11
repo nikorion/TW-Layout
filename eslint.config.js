@@ -11,7 +11,7 @@ export default [
     ],
   },
   {
-    files: ["src/layout/modules/*.js"],
+    files: ["src/scroll-layout/modules/*.js"],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: "script",
