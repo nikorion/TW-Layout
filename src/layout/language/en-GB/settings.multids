@@ -1,7 +1,7 @@
-title: $:/plugins/nikorion/scroll-layout/language/en-GB/
+title: $:/plugins/nikorion/layout/language/en-GB/
 
-Settings/Caption: Scroll Layout
-Settings/Heading: Scroll Layout — Settings
+Settings/Caption: Layout
+Settings/Heading: Layout — Settings
 Settings/Intro: Modified values create a config tiddler that overrides the default. The ↺ button deletes the tiddler and restores the default value.
 Settings/Section/ScrollbarAppearance: Scrollbar appearance
 Settings/Note/GeckoOnly: Firefox (Gecko engine) only supports the "thin/auto/none" keyword and thumb/track colour on native scrollbars — width (px) and radius below only take effect in browsers built on Blink or WebKit (Chrome, Edge, Opera, Safari).

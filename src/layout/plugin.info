@@ -1,12 +1,12 @@
 {
-	"title": "$:/plugins/nikorion/scroll-layout",
-	"name": "Scroll Layout",
+	"title": "$:/plugins/nikorion/layout",
+	"name": "Layout",
 	"description": "Isolated scroll areas — story river, sidebar tabs, and tab content each scroll independently",
 	"author": "nikorion",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"core-version": ">=5.3.0",
 	"list": "readme license history",
-	"source": "https://github.com/nikorion/TW-Scroll-Layout",
+	"source": "https://github.com/nikorion/TW-Layout",
 	"type": "application/json",
 	"plugin-type": "plugin"
 }

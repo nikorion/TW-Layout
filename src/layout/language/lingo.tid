@@ -1,15 +1,15 @@
-title: $:/plugins/nikorion/scroll-layout/language/lingo
+title: $:/plugins/nikorion/layout/language/lingo
 tags: $:/tags/Global
 
 <!--
-scroll-layout wikitext i18n. Two separate entry points, on purpose.
+layout wikitext i18n. Two separate entry points, on purpose.
 
 Why two and not one: in TiddlyWiki, "render wikitext" and "return a string" are
 two distinct, non-interchangeable mechanisms.
-  - `scroll-layout-lingo` (\procedure) → RENDERS the wikitext (widgets: backticks
+  - `layout-lingo` (\procedure) → RENDERS the wikitext (widgets: backticks
     → <code>, clickable links, etc.), in block mode (may wrap in a <p>). Use it
     in a tiddler body / for prose.
-  - `scroll-layout-lingo-text` (\function) → returns a RAW string (unrendered).
+  - `layout-lingo-text` (\function) → returns a RAW string (unrendered).
     The only form that can be dropped into an attribute (tooltip=<<…>>), a !!
     heading, or inline HTML (<th>) where a <p> would get in the way. Does not
     render wikitext.
@@ -26,15 +26,15 @@ entirely (learned the hard way). Also note the strings are SHADOW tiddlers
 So the cascade stays inline, duplicated across the two definitions below.
 -->
 
-\procedure scroll-layout-lingo(title)
+\procedure layout-lingo(title)
 \whitespace trim
 <$let _lang={{{ [[$:/language]get[text]get[name]else[en-GB]] }}}>
-<$transclude $tiddler={{{ [[$:/plugins/nikorion/scroll-layout/language/]addsuffix<_lang>addsuffix[/]addsuffix<title>] }}}>
-<$transclude $tiddler={{{ [[$:/plugins/nikorion/scroll-layout/language/en-GB/]addsuffix<title>] }}}/>
+<$transclude $tiddler={{{ [[$:/plugins/nikorion/layout/language/]addsuffix<_lang>addsuffix[/]addsuffix<title>] }}}>
+<$transclude $tiddler={{{ [[$:/plugins/nikorion/layout/language/en-GB/]addsuffix<title>] }}}/>
 </$transclude>
 </$let>
 \end
 
-\function scroll-layout-lingo-text(title)
-[[$:/language]get[text]get[name]else[en-GB]addprefix[$:/plugins/nikorion/scroll-layout/language/]addsuffix[/]addsuffix<title>get[text]] :else[[$:/plugins/nikorion/scroll-layout/language/en-GB/]addsuffix<title>get[text]] :else[<title>]
+\function layout-lingo-text(title)
+[[$:/language]get[text]get[name]else[en-GB]addprefix[$:/plugins/nikorion/layout/language/]addsuffix[/]addsuffix<title>get[text]] :else[[$:/plugins/nikorion/layout/language/en-GB/]addsuffix<title>get[text]] :else[<title>]
 \end

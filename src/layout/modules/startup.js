@@ -1,12 +1,12 @@
 /*\
-title: $:/plugins/nikorion/scroll-layout/startup.js
+title: $:/plugins/nikorion/layout/startup.js
 type: application/javascript
 module-type: startup
 \*/
 (function(){
 "use strict";
 
-exports.name = "scroll-layout";
+exports.name = "layout";
 exports.platforms = ["browser"];
 exports.after = ["startup"];
 exports.synchronous = true;

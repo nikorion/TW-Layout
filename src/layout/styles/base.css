@@ -3,7 +3,7 @@ html, body.tc-body {
 }
 
 /* Vanilla pushes tc-page-container-wrapper down by storytop to clear the fixed topbar.
-    In scroll-layout the river is positioned independently, so this offset creates a dead gap. */
+    In this layout the river is positioned independently, so this offset creates a dead gap. */
 .tc-page-container-wrapper {
     margin-top: 0;
     padding-top: 0;

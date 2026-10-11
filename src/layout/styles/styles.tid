@@ -1,13 +1,13 @@
-title: $:/plugins/nikorion/scroll-layout/styles/styles
+title: $:/plugins/nikorion/layout/styles/styles
 tags: $:/tags/Stylesheet
 type: text/vnd.tiddlywiki
 
 \rules except dash
 
-<$reveal state="$:/layout" type="match" text="$:/plugins/nikorion/scroll-layout/layout" default="">
+<$reveal state="$:/layout" type="match" text="$:/plugins/nikorion/layout/layout" default="">
 @media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
 
-	{{$:/plugins/nikorion/scroll-layout/styles/base.css}}
+	{{$:/plugins/nikorion/layout/styles/base.css}}
 
 	/* Defaults are shipped as shadow tiddlers (default-config.multids) at these
 	   same config titles: a real tiddler of the same title overrides the shadow,
@@ -19,12 +19,12 @@ type: text/vnd.tiddlywiki
 	   invalid var() name. In Gecko that poisons the single scrollbar-color
 	   property, silently reverting BOTH thumb and track to browser defaults. */
 	:root {
-		--nk-scrollbar-width:             <$text text={{$:/config/nikorion/scroll-layout/scrollbar-width}}/>;
-		--nk-scrollbar-width-mode:        <$text text={{$:/config/nikorion/scroll-layout/scrollbar-width-mode}}/>;
-		--nk-scrollbar-radius:            <$text text={{$:/config/nikorion/scroll-layout/scrollbar-radius}}/>;
-		--nk-scrollbar-thumb-color:       <$text text={{$:/config/nikorion/scroll-layout/scrollbar-thumb-color}}/>;
-		--nk-scrollbar-thumb-hover-color: <$text text={{$:/config/nikorion/scroll-layout/scrollbar-thumb-hover-color}}/>;
-		--nk-scrollbar-track-color:       <$text text={{$:/config/nikorion/scroll-layout/scrollbar-track-color}}/>;
+		--nk-scrollbar-width:             <$text text={{$:/config/nikorion/layout/scrollbar-width}}/>;
+		--nk-scrollbar-width-mode:        <$text text={{$:/config/nikorion/layout/scrollbar-width-mode}}/>;
+		--nk-scrollbar-radius:            <$text text={{$:/config/nikorion/layout/scrollbar-radius}}/>;
+		--nk-scrollbar-thumb-color:       <$text text={{$:/config/nikorion/layout/scrollbar-thumb-color}}/>;
+		--nk-scrollbar-thumb-hover-color: <$text text={{$:/config/nikorion/layout/scrollbar-thumb-hover-color}}/>;
+		--nk-scrollbar-track-color:       <$text text={{$:/config/nikorion/layout/scrollbar-track-color}}/>;
 	}
 
 	/* Sticky tiddler title — gated on the vanilla stickytitles option so that disabling it

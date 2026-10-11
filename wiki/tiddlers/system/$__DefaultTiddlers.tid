@@ -5,5 +5,5 @@ modifier: nikorion
 title: $:/DefaultTiddlers
 type: text/vnd.tiddlywiki
 
-$:/plugins/nikorion/scroll-layout
-$:/plugins/nikorion/scroll-layout/settings
+$:/plugins/nikorion/layout
+$:/plugins/nikorion/layout/settings
