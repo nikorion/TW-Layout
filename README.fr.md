@@ -54,7 +54,7 @@ Le module de démarrage corrige `$tw.pageScroller.scrollIntoView` : quand l'él�
 
 **Depuis la bibliothèque de plugins nikorion** (TiddlyWiki propose ensuite chaque nouvelle version en mise à jour) :
 
-1. Sur [nikorion.github.io/tw-plugins](https://nikorion.github.io/tw-plugins/), glisser le bouton **Bibliothèque de plugins nikorion** sur votre wiki (une fois par wiki).
+1. Sur [nikorion.github.io/TW-Plugin-Library](https://nikorion.github.io/TW-Plugin-Library/), glisser le bouton **Bibliothèque de plugins nikorion** sur votre wiki (une fois par wiki).
 2. Ouvrir *Panneau de configuration → Plugins → Obtenir d'autres plugins → Ouvrir la bibliothèque de plugins*, choisir l'onglet nikorion et installer **Scroll Layout**.
 
 **À la main** : télécharger [`TW-Scroll-Layout-Plugin.json`](https://nikorion.github.io/TW-Scroll-Layout/TW-Scroll-Layout-Plugin.json) et le glisser-déposer sur votre wiki.
