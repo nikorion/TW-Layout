@@ -2,6 +2,9 @@
 
 > **Avant toute tâche sur ce plugin, consulter d'abord le `CLAUDE.md` du workspace** (`../CLAUDE.md`) et ses `guides/` : outillage de dev commun (pnpm, `dev.cjs`/HMR, Ctrl+C, git push), pièges PowerShell/Windows, `publishFilter`, conventions modules JS, symlink. Ci-dessous : uniquement le spécifique à TW-Layout.
 
+## Sélection par défaut
+`src/layout/select.tid` livre `$:/layout` = `$:/plugins/nikorion/layout/layout` : charger le plugin sélectionne la mise en page (2026-10-11). Un vrai `$:/layout` dans un wiki (kms-prod) le masque.
+
 ## Ce que c'est
 Plugin TiddlyWiki (`$:/plugins/nikorion/layout`) qui remplace le layout par défaut par un layout avec zones de scroll indépendantes : le story river, les onglets de la sidebar et le contenu des onglets scrollent chacun séparément. Auteur : nikorion.
 
