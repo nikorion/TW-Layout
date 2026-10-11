@@ -2,7 +2,7 @@
 
 **English** · [Français](README.fr.md)
 
-![Status](https://img.shields.io/badge/status-stable-green)
+![Status](https://img.shields.io/badge/status-experimental-orange)
 ![TiddlyWiki](https://img.shields.io/badge/TiddlyWiki-%E2%89%A55.3.0-blue)
 
 A TiddlyWiki layout plugin that gives the story river, sidebar tabs, and tab content their own independent scroll areas. The page no longer scrolls as a whole — each zone scrolls in place.

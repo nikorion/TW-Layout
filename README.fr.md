@@ -2,7 +2,7 @@
 
 [English](README.md) · **Français**
 
-![Status](https://img.shields.io/badge/status-stable-green)
+![Status](https://img.shields.io/badge/status-experimental-orange)
 ![TiddlyWiki](https://img.shields.io/badge/TiddlyWiki-%E2%89%A55.3.0-blue)
 
 Un plugin de mise en page TiddlyWiki qui donne au story river, aux onglets de la barre latérale et à leur contenu leurs propres zones de défilement indépendantes. La page ne défile plus d'un bloc — chaque zone défile sur place.
