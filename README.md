@@ -93,6 +93,22 @@ Sources are in `src/scroll-layout/`. The dev wiki is in `wiki/`. `pnpm dev` runs
 
 ## Version history
 
+**v2.1.0 (2026-10-11)**
+
+Renamed back to Scroll Layout: plugin `$:/plugins/nikorion/scroll-layout`, config namespace `$:/config/nikorion/scroll-layout/`, short name `scroll-layout`, repository `TW-Scroll-Layout`. The layout is still listed as "Nikorion layout".
+
+**v2.0.0 (2026-10-11)**
+
+Renamed from Scroll Layout to Layout (plugin `$:/plugins/nikorion/layout`, config namespace `$:/config/nikorion/layout/`). The layout is listed as "Nikorion layout" and translated.
+
+**v1.2.0 (2026-08-18)**
+
+*fluid-fixed*: restored a free gutter between the story river and the sidebar, matching the 42px one on the left of the story (vanilla leaves none there). The river absorbs it, the sidebar keeps its exact vanilla geometry. The river's scrollbar is drawn inside that gutter, at its left end, glued to the story content.
+
+**v1.1.0 (2026-08-17)**
+
+Localised the licence and the version history: `licence.tid` and `history.tid` are now language selectors that fall back to en-GB, like `readme.tid`. The licence body stays in English in every language.
+
 **v1.0.0 (2026-07-16)**
 
 Initial release. Isolated scroll areas for story river and sidebar tab content. Sticky titles with `tc-tiddler-stuck` detached-frame state. `$tw.pageScroller` patch for scroll-into-view in `$scrollable` containers. Full support for fixed-fluid and fluid-fixed sidebar layouts with sidebar-hidden fallback.

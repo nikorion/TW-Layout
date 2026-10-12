@@ -93,6 +93,22 @@ Les sources sont dans `src/scroll-layout/`. Le wiki de dev est dans `wiki/`. `pn
 
 ## Historique des versions
 
+**v2.1.0 (2026-10-11)**
+
+Retour au nom Scroll Layout : plugin `$:/plugins/nikorion/scroll-layout`, espace de config `$:/config/nikorion/scroll-layout/`, nom court `scroll-layout`, dépôt `TW-Scroll-Layout`. La mise en page reste listée sous « Mise en page nikorion ».
+
+**v2.0.0 (2026-10-11)**
+
+Renommé de Scroll Layout en Layout (plugin `$:/plugins/nikorion/layout`, espace de config `$:/config/nikorion/layout/`). La mise en page est listée sous « Mise en page nikorion » et traduite.
+
+**v1.2.0 (2026-08-18)**
+
+*fluid-fixed* : rétablissement d'une gouttière libre entre la rivière et la barre latérale, identique aux 42px situés à gauche du contenu (vanilla n'en laisse aucune). La rivière l'absorbe, la barre latérale conserve sa géométrie vanilla exacte. La barre de défilement de la rivière est dessinée dans cette gouttière, à son extrémité gauche, collée au contenu.
+
+**v1.1.0 (2026-08-17)**
+
+Localisation de la licence et de l'historique des versions : `licence.tid` et `history.tid` sont désormais des sélecteurs de langue avec repli sur en-GB, comme `readme.tid`. Le corps de la licence reste en anglais dans toutes les langues.
+
 **v1.0.0 (2026-07-16)**
 
 Première version. Zones de défilement isolées pour le story river et le contenu des onglets de la barre latérale. Titres collants avec l'état de cadre détaché `tc-tiddler-stuck`. Correctif de `$tw.pageScroller` pour le défilement vers l'élément dans les conteneurs `$scrollable`. Prise en charge complète des mises en page de barre latérale fixed-fluid et fluid-fixed, avec repli quand la barre latérale est masquée.
