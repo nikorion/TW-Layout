@@ -93,7 +93,7 @@ Sources are in `src/scroll-layout/`. The dev wiki is in `wiki/`. `pnpm dev` runs
 
 ## Version history
 
-**v1.0.0**
+**v1.0.0 (2026-07-16)**
 
 Initial release. Isolated scroll areas for story river and sidebar tab content. Sticky titles with `tc-tiddler-stuck` detached-frame state. `$tw.pageScroller` patch for scroll-into-view in `$scrollable` containers. Full support for fixed-fluid and fluid-fixed sidebar layouts with sidebar-hidden fallback.
 

@@ -93,7 +93,7 @@ Les sources sont dans `src/scroll-layout/`. Le wiki de dev est dans `wiki/`. `pn
 
 ## Historique des versions
 
-**v1.0.0**
+**v1.0.0 (2026-07-16)**
 
 Première version. Zones de défilement isolées pour le story river et le contenu des onglets de la barre latérale. Titres collants avec l'état de cadre détaché `tc-tiddler-stuck`. Correctif de `$tw.pageScroller` pour le défilement vers l'élément dans les conteneurs `$scrollable`. Prise en charge complète des mises en page de barre latérale fixed-fluid et fluid-fixed, avec repli quand la barre latérale est masquée.
 
