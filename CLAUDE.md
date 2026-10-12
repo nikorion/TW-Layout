@@ -58,6 +58,6 @@ Titres : les deux suivent titre=chemin (`.../layout/styles/styles` et `.../layou
 
 ### Pièges vécus (2026-10-12, Firefox)
 
-- **`scrollbar-color` est une propriété héritée** : le textarea caché que l'éditeur « iframe » de TW copie (`copyStyles`) vers son iframe est un descendant du river, donc l'éditeur affichait la barre bleue du river. Corrigé dans `base.css` (bloc Gecko) : `scrollbar-color: auto` sur textareas/inputs/`.tc-edit-texteditor` du river. Pas de patch de TiddlyWiki : CSS seule.
+- **Barre bleue dans l'éditeur** (`scrollbar-color`, propriété héritée, copiée dans l'iframe par `copyStyles` depuis un textarea caché du river) : masquée, pas corrigée, par la règle suivante. Pas de patch de TiddlyWiki : CSS seule.
 - **`overflow-y: hidden` sur `textarea.tc-edit-texteditor-body`** du river (`base.css`) : l'éditeur « iframe » mesure son texte avant l'apparition de sa propre barre ; la barre rétrécit le texte, qui se replie plus haut, d'où un débordement de quelques lignes et une barre inutile. En mode hauteur fixe (bouton « hauteur de l'éditeur », masqué dans kms-prod) la zone ne défile donc plus.
 - Non vu dans kms-prod : il édite avec CodeMirror 6 (voir `../CLAUDE.md`).

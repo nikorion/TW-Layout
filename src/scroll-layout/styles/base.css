@@ -134,16 +134,6 @@ html, body.tc-body {
         scrollbar-width: var(--nk-scrollbar-width-mode);
         scrollbar-color: var(--nk-scrollbar-thumb-color) var(--nk-scrollbar-track-color);
     }
-
-    /* scrollbar-color is an INHERITED property: every editor inside the river would pick up the
-       river's colours. TiddlyWiki's framed editor copies the computed styles of a hidden dummy
-       textarea (a river descendant) into the textarea of its iframe, so the editor drew the
-       river's blue scrollbar. Reset it to the native one on the editors. */
-    .tc-story-river textarea,
-    .tc-story-river input,
-    .tc-story-river .tc-edit-texteditor {
-        scrollbar-color: auto;
-    }
 }
 
 /* The framed editor sizes its iframe to the text's scrollHeight (auto-height mode). When the
