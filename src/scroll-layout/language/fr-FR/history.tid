@@ -1,4 +1,4 @@
-title: $:/plugins/nikorion/layout/language/fr-FR/history
+title: $:/plugins/nikorion/scroll-layout/language/fr-FR/history
 type: text/vnd.tiddlywiki
 
 * ''2.1.0'' (2026-10-11) -- Retour au nom Scroll Layout (plugin `$:/plugins/nikorion/scroll-layout`, espace de config `$:/config/nikorion/scroll-layout/`, nom court `scroll-layout`, dépôt `TW-Scroll-Layout`) ; la mise en page reste listée sous « Mise en page nikorion ».
