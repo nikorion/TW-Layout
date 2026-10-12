@@ -55,3 +55,9 @@ Layout TW (`tag $:/tags/Layout`), sélectionné via `$:/layout` — plus d'overr
 - **base.css** — CSS pur, statique, **non taggé Stylesheet** (jamais appliqué seul, uniquement injecté par la transclusion ci-dessus) : `overflow:hidden` html/body, hauteur du river `calc(100vh - storytop)`, chaîne flex sidebar jusqu'au `.tc-tab-content`, scrollbars Gecko/Webkit, `tc-tiddler-stuck`.
 
 Titres : les deux suivent titre=chemin (`.../layout/styles/styles` et `.../layout/styles/base.css`), conformément à la convention du workspace. Rien de dérogatoire ici.
+
+### Pièges vécus (2026-10-12, Firefox)
+
+- **`scrollbar-color` est une propriété héritée** : le textarea caché que l'éditeur « iframe » de TW copie (`copyStyles`) vers son iframe est un descendant du river, donc l'éditeur affichait la barre bleue du river. Corrigé dans `base.css` (bloc Gecko) : `scrollbar-color: auto` sur textareas/inputs/`.tc-edit-texteditor` du river. Pas de patch de TiddlyWiki : CSS seule.
+- **`overflow-y: hidden` sur `textarea.tc-edit-texteditor-body`** du river (`base.css`) : l'éditeur « iframe » mesure son texte avant l'apparition de sa propre barre ; la barre rétrécit le texte, qui se replie plus haut, d'où un débordement de quelques lignes et une barre inutile. En mode hauteur fixe (bouton « hauteur de l'éditeur », masqué dans kms-prod) la zone ne défile donc plus.
+- Non vu dans kms-prod : il édite avec CodeMirror 6 (voir `../CLAUDE.md`).
